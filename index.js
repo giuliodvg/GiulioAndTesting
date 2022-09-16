@@ -148,5 +148,4 @@ client.on("messageCreate", message => {
     let embed = new Discord.MessageEmbed()
     .setTitle("HELP")
     .setDescription("!userinfo\n__Ti da informazioni su un utente\n!serverinfo\n__yi da informazioni sul server__\n!ban [ONLY STAFF]\n__Caccia un utente dal server\n!kick [ONLY STAFF]\n__Espelle un utente__\n!mute [ONLY STAFF]\n__Silenzia un utente nel server__\nunmute [ONLY STAFF]\n__Rimuovi il silenziamento ad un utente nel server__")
-message.channel.send({ embeds: [embed] })
 })
