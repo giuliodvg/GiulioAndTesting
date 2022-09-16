@@ -13,7 +13,7 @@ client.on("ready", () => {
     .setColor("#00ff44")
     client.channels.cache.get("1020358245593919559").send({ embeds: [embed] })
        console.log("Il bot è online");
-    client.user.setActivity('Sono un test', { type: 'PLAYING' }); 
+    client.user.setActivity('!help', { type: 'PLAYING' }); 
 })
 
 client.on("messageCreate", message => {
@@ -142,4 +142,11 @@ client.on("messageCreate", message => {
             })
     }
 
+})
+
+client.on("messageCreate", message => {
+    let embed = new Discord.MessageEmbed()
+    .setTitle("HELP")
+    .setDescription("!userinfo\n__Ti da informazioni su un utente\n!serverinfo\n__yi da informazioni sul server__\n!ban [ONLY STAFF]\n__Caccia un utente dal server\n!kick [ONLY STAFF]\n__Espelle un utente__\n!mute [ONLY STAFF]\n__Silenzia un utente nel server__\nunmute [ONLY STAFF]\n__Rimuovi il silenziamento ad un utente nel server__")
+message.channel.send({ embeds: [embed] })
 })
