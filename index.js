@@ -143,6 +143,6 @@ client.on("messageCreate", message => {
     }
 
     if(message.content == "!host")
-    message.channel.send("Hosted by: heroku")
+    message.channel.send("Hosted by: heroku dal 16/9/2022")
 
 })
