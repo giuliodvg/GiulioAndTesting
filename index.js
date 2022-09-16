@@ -4,7 +4,7 @@ const client = new Discord.Client(
 )
 
 
-client.login("MTAxODU3ODY0MDM5NDUzOTA0OA.GOM64F.cxTfOyppRzNMLwf1VySIUKmuLynF-_DEotMoVo")
+client.login(process.env.token)
 
 client.on("ready", () => {
     let embed = new Discord.MessageEmbed()
