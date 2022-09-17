@@ -158,4 +158,3 @@ client.on("messageCreate", message => {
         message.channel.send({ content: "Clicca sul bottone per aprire un ticket", components: [row] })
     }
 })
-
