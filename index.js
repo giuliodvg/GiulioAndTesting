@@ -146,7 +146,7 @@ client.on("messageCreate", message => {
     var embed = new Discord.MessageEmbed()
         .setTitle("Hosted By HEROKU")
         .setDescription("Questo bot è hostato su heroku dal 16/09/2022")
-    message.channel.send( {embeds: [embed]} )
+        message.channel.send( {embeds: [embed] })
 
 })
 
