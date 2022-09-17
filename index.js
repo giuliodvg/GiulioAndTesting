@@ -147,6 +147,8 @@ client.on("messageCreate", message => {
 
 })
 
+const { EmbedBuilder } = require('discord.js');
+
 const exampleEmbed = new EmbedBuilder()
 	.setColor(0x0099FF)
 	.setTitle('Some title')
