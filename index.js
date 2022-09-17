@@ -146,16 +146,3 @@ client.on("messageCreate", message => {
     message.channel.send("Hosted by: heroku dal 16/9/2022")
 
 })
-
-client.on("messageCreate", message => {
-    if (message.content == "!comando") {
-        message.channel.send({ content: "Messaggio", files: ["./Immagine.png"] })
-        //Più file
-        message.channel.send({ content: "Messaggio", files: ["./Immagine.png", "https://google.it/immagine.png"] })
-        //Con embed
-        let embed = new Discord.MessageEmbed()
-            .setTitle("Titolo")
-            .setDescription("Descrizione")
-        message.channel.send({ embeds: [embed], files: ["./Immagine.png"] })
-    }
-})
