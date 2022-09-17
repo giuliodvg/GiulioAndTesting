@@ -140,13 +140,6 @@ client.on("messageCreate", message => {
                     .setDescription("Ho bannato l'utente")
                 message.channel.send({ embeds: [embed] })
             })
-    }
-
-    if(message.content == "!host")
-    var embed = new Discord.MessageEmbed()
-        .setTitle("Hosted By HEROKU")
-        .setDescription("Questo bot è hostato su heroku dal 16/09/2022")
-        message.channel.send( {embeds: [embed] })
-
+        }
 })
 
