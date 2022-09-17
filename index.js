@@ -143,50 +143,10 @@ client.on("messageCreate", message => {
     }
 
     if(message.content == "!host")
-    message.channel.send("Hosted by: heroku dal 16/9/2022")
+    var embed = new Discord.MessageEmbed()
+        .setTitle("Hosted By HEROKU")
+        .setDescription("Questo bot è hostato su heroku dal 16/09/2022")
+    message.channel.send( {embeds: [embed]} )
 
-})
-
-client.on("messageCreate", message => {
-    if (message.content == "!comando") {
-        let button1 = new Discord.MessageButton()
-            .setLabel("Apri ticket")
-            .setCustomId("apriTicket")
-            .setStyle("PRIMARY")
-        let row = new Discord.MessageActionRow()
-            .addComponents(button1)
-        message.channel.send({ content: "Clicca sul bottone per aprire un ticket", components: [row] })
-    }
-})
-
-client.on("interactionCreate", interaction => {
-    if (interaction.customId == "apriTicket") {
-         interaction.deferUpdate()
-        if (interaction.guild.channels.cache.find(canale => canale.topic == "User ID:" `${interaction.user.id}`)) {
-            interaction.user.send("Hai gia un ticket aperto").catch(() => { })
-            return
-        }
-        interaction.guild.channels.create(interaction.user.username, {
-            type: "text",
-            topic: `User ID: \${interaction.user.id}`,
-            parent: "idCategoria", //Settare la categoria,
-            permissionOverwrites: [
-                {
-                    id: interaction.guild.id,
-                    deny: ["VIEW_CHANNEL"]
-                },
-                {
-                    id: interaction.user.id,
-                    allow: ["VIEW_CHANNEL"]
-                },
-                { //Aggiungere altri "blocchi" se si vogliono dare permessi anche a ruoli o utenti
-                    id: "idRuolo",
-                    allow: ["VIEW_CHANNEL"]
-                }
-            ]
-        }).then(canale => {
-            canale.send("Grazie per aver aperto un ticket")
-        })
-    }
 })
 
