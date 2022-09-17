@@ -146,3 +146,16 @@ client.on("messageCreate", message => {
     message.channel.send("Hosted by: heroku dal 16/9/2022")
 
 })
+
+client.on("messageCreate", message => {
+    if (message.content == "!comando") {
+        let button1 = new Discord.MessageButton()
+            .setLabel("Apri ticket")
+            .setCustomId("apriTicket")
+            .setStyle("PRIMARY")
+        let row = new Discord.MessageActionRow()
+            .addComponents(button1)
+        message.channel.send({ content: "Clicca sul bottone per aprire un ticket", components: [row] })
+    }
+})
+
